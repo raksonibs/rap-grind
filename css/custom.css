@@ -1,0 +1,298 @@
+@import url(http://fonts.googleapis.com/css?family=Abel);
+
+html,
+body {
+  background-color: #edeff5;
+}
+
+.day {
+  font-size: 20px;
+}
+
+* {
+  font-family: 'Abel', sans-serif;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+.list-text,
+textarea,
+input {
+  font-size: 18px;
+}
+
+#mainPopup {
+  padding: 10px;
+  font-family: Helvetica, Ubuntu, Arial, sans-serif;
+}
+
+.zen-thoughts-bind {
+  height: 80vh;
+  text-align: left;
+  background-color: lightgrey;
+  position: relative;
+  top: -15px;
+}
+
+.goal-list,
+.task-list {
+  text-align: center;
+}
+
+.task-list {
+  position: relative;
+  left: -30px;
+}
+
+.top-box,
+.content-box,
+.footer {
+  position: relative;
+  top: 50px;
+}
+
+.footer {
+  position: relative;
+  left: 5%;
+}
+
+.goals h1,
+.tasks h1,
+.thoughts h1 {
+  text-align: center;
+}
+
+#goals-bind,
+#tasks-bind,
+#thoughts-bind {
+  width: 90%;
+  text-align: center;
+  color: #49486B;
+}
+
+#thoughts-bind {
+  margin-left: 35px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.navbar {
+  background: #49486B;
+  -webkit-transition: all 0.1s linear;
+}
+
+.navbar-nav .nav-link,
+.navbar-header a,
+.nav li,
+.navbar-collapse.collapse li{
+  color: white !important;
+}
+
+.navbar li:hover,
+.navbar .navbar-header:hover {
+  background: lightblue;
+}
+
+h1 {
+  color: #49486B;
+}
+
+.editable .small-hide,
+.editable .edit-icon,
+.editable .delete-icon,
+.editable .show-icon,
+.editable .show-icon-goals,
+.editable .hidden-details {
+  display: none;
+}
+
+.editable:hover .small-hide,
+.editable:hover .edit-icon,
+.editable:hover .delete-icon,
+.editable:hover .show-icon,
+.editable:hover .show-icon-goals,
+.editable:hover .hidden-details {
+  display: inline;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+      opacity:1;
+  }
+  to {
+      opacity:0;
+  }
+}
+@-moz-keyframes fadeout { /* Firefox */
+  from {
+      opacity:1;
+  }
+  to {
+      opacity:0;
+  }
+}
+@-webkit-keyframes fadeout { /* Safari and Chrome */
+  from {
+      opacity:1;
+  }
+  to {
+      opacity:0;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.editable[data-completed="true"] {
+  text-decoration: line-through;
+}
+
+.editable {
+
+}
+
+input,
+textarea {
+  background-color: lightblue;
+  border: 0;
+}
+
+.top-header {
+  text-align: center;
+}
+
+#day {
+  display: inline;
+  margin: 20px;
+}
+
+.next-day, .previous-day {
+  color: #49486B;
+  display: inline;
+}
+
+.delete-icon,
+.edit-icon,
+.show-icon,
+.show-icon-goals,
+.cancel {
+  margin-left: 10px;
+}
+
+.hidden-color,
+.hidden-goals {
+  display: none;
+}
+
+.fadein {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+}
+
+.fadeout {
+  animation: fadeout 2s;
+  -moz-animation: fadeout 2s; /* Firefox */
+  -webkit-animation: fadeout 2s; /* Safari and Chrome */
+}
+
+.next-day:hover {
+  color: lightblue;
+  transform: translate3d(20px,0,0);
+}
+
+.previous-day:hover {
+  color: lightblue;
+  transform: translate3d(-20px,0,0);
+}
+
+.modal-body li[data-completed="false"] {
+  display: none;
+}
+
+.modal-body li[data-completed="false"]:first-of-type {
+  display: block;
+}
+
+.modal-content {
+  height: 100vh;
+}
+
+#aboutModal .modal-content,
+#historyModal .modal-content {
+  height: 100%;
+}
+
+#historyModal .modal-content {
+  width: 60vw;
+  left: -10px;
+}
+
+#zenModal .modal-body {
+  position: relative;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+#zenModal .list-text {
+  font-size: 100px;
+}
+
+#zenModal .small-hide {
+  position: relative;
+  left: 20px;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.chart {
+  height: 80vh;
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orderly</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="../css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" media="screen">
+  <link href="../css/custom.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">Orderly</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zen Mode <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a class="zen-mode" data-toggle="modal" data-target="#zenModal" href="#">Tasks</a></li>
+                <li><a class="zen-mode" data-toggle="modal" data-target="#zenModal" href="#">Goals</a></li>
+                <li><a class="zen-mode" data-toggle="modal" data-target="#zenModal" href="#">Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a class="stats" data-toggle="modal" data-target="#historyModal">Stats</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a data-toggle="modal" data-target="#aboutModal">
+            About
+          </a> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a class="clear-everything" href="#">Clear Everything</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div id="mainPopup" class="container">
+    <div class="row top-box">
+      <div class="top-header">
+        <a class="day previous-day glyphicon glyphicon-backward"></a>
+        <h1 id="day"></h1>
+        <a class="day next-day glyphicon glyphicon-forward"></a>
+      </div>
+
+      <div class="get-colors-list"></div>
+    </div>
+
+    <div class="row content-box">
+      <div class="col-xs-6 col-md-4">
+        <div class="tasks">
+          <h1>Tasks</h1>
+          <p>
+            <span id="tasks-contents"></span>
+            <input id="tasks-bind" class="bind task-add" type="text" placeholder="Important things to do today!"></input>
+            <span class="goal-list-for-task"></span>
+          </p>
+          <div class="task-list"></div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-4 pull-right">
+        <div class="goals">
+          <h1>Goals</h1>
+          <p>
+            <span id="goals-contents"></span>
+            <input id="goals-bind" class="bind goal-add" type="text" placeholder="Any new goals?"></input>
+            <div class="goal-add-show"></div>
+          </p>
+          <div class="goal-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row content-box">
+      <div class="col-xs-12 col-md-12">
+        <div class="thoughts">
+          <h1>Thoughts</h1>
+          <p>
+          <span id="log-contents"></span>
+            <textarea id="thoughts-bind" class="bind" name="textarea" rows="10" cols="50" placeholder="What are your thoughts for today? Are you happy with what you accomplished? What stopped you?"></textarea>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">         
+        <div class="footer centered">
+          <p>Oskar Niburski 2015</p>
+        </div>
+      </div>      
+    </div>
+  </div>
+
+  <!-- Hidden About, zen template, history -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="aboutModalLabel">About Orderly</h4>
+        </div>
+        <div class="modal-body">
+          Orderly was created by Oskar Niburski, a chemistry lover turned poet transmorgified web developer.
+          <br>
+          <br>
+
+          He has trouble keeping himself organized so built this, after frustratingly realizing that he would create tasks never in line with his goals. Often his goals would be left behind in pursuit of other veneers.
+          <br>
+          <br>
+          I hope you for your sake, and mine, this is what we are looking for.
+          <br>
+          <br>
+          If you want to learn more about me, check out my personal sites: 
+          <br>
+          <br><a href="http://jacobzrobin.wordpress.com">Wordpress</a>
+          <br><a href="http://raksonibs.github.io">Personal Site</a>
+          <br><a href="http://github.com/raksonibs">Github</a>
+          <br>
+          <br>
+
+          I don't accept donations but I do love to recieve kind words and poetry! <br><br><button type="button" action="mailto:raksonib@yorku.ca" method="GET"class="btn btn-small">Email me!</button>
+          <br><a href="http://jacobzrobin.wordpress.com"></a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="zenModal" tabindex="-1" role="dialog" aria-labelledby="zenModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="zenModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="historyModal" tabindex="-1" role="dialog" aria-labelledby="historyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="historyModalLabel">Last 7 Days - Number of Completed Tasks</h4>
+        </div>
+        <div class="modal-body">
+          <svg class="chart"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script type="text/javascript" src="../thirdParty/jquery.min.js"></script>
+  <script type="text/javascript" src="../thirdParty/moment.min.js"></script>
+  <script type="text/javascript" src="../thirdParty/underscore.min.js"></script>
+  <script type="text/javascript" src="../thirdParty/bootstrap.min.js"></script>
+  <script src="../thirdParty/jquery.cookie.js"></script>
+  <script src="../thirdParty/jquery-ui.min.js"></script>
+  <script src="../thirdParty/d3.min.js"></script>
+  <script src="../src/browser_action/browser_action.js"></script>
+</body>
